@@ -1,0 +1,21 @@
+<!--home bed-->
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+    {% for pet in pets %}
+    <div class="petname">
+        
+        <h3>{{ pet.name|capfirst }}</h3>
+        
+        <p>{{ pet.species }} {{ pet.id }}</p>
+        {% if pet.breed %}
+            <p>Breed: {{ pet.breed }}</p>
+        {% endif %}
+        <p class="hidden">{{ pet.description }}</p>
+    </div>
+    
+    {% endfor %}
+</div>
+
+{% endblock %}
